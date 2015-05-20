@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="{Favicon}">
+      <link rel="alternate" type="application/rss+xml" href="{RSS}">
+      {block:Description}
+      <meta name="description" content="{MetaDescription}" />
+      {/block:Description}
+      <title>{Title}</title>
+      <style type="text/css">
+         body{
+           margin:40px auto;
+           max-width:500px;
+           line-height:1.2;
+           font-size:18px;
+           color:#444;padding:0 10px}
+         h1,h2,h3{line-height:1.2}
+         header,div{margin-bottom: 10em}
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>{Title}</h1>
+         {block:IndexPage}
+            {block:Description}
+                <aside>{Description}</aside>
+            {/block:Description}
+         {/block:IndexPage}
+      </header>
+      {block:IndexPage}
+        {block:Posts}
+        <div>
+          {block:Text}
+            {block:Title}
+              <h2>{Title}</h2>
+            {/block:Title}
+            {Body}
+          {/block:Text}
+
+          {block:Photo}
+            <img src="{PhotoURL-500}" />
+            {block:Caption}
+              {Caption}
+            {/block:Caption}
+          {/block:Photo}
+        </div>
+
+        {/block:Posts}
+      <hr>
+      <h2>Epilogue</h2>
+   </body>
+</html>
